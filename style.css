@@ -13,50 +13,79 @@ body {
     text-align: center;
 }
 
+#container {
+    position: relative;
+    margin: auto;
+    width: 1078px;
+}
+
 header {
-    color: #ffff0f;
-    background-color: #000030;
+    color: black;
+    background-color: #005aa3;
     position: relative;
     height: 100px;
 }
 
 nav {
-    color: #ff5fff;
-    background-color: #004030;
+    color: black;
+    background-color: #0f436d;
 }
 
 main {
-    color: #ff524f;
-    background-color: #134030;
+    color: black;
+    background-color: #0f436d;
     height: auto;
     overflow: hidden;
 }
 
 footer {
-    color: #542208;
-    background-color: #0a0a39;
+    color: black;
+    background-color: #005aa3;
     clear: both;
 }
 
 #col-left {
     background-color: #006acc;
-    width: 200px;
-    height: 200px;
+    width: 215px;
+    height: 293px;
     float: left;
 }
 
 #col-center {
     background-color: #006acc;
-    height: auto;
+    width: calc(100% - 220px);
+    margin-left: 220px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-#container {
-    position: relative;
-    margin: auto;
-    width: 1078px;
-    height: auto;
-    overflow: hidden;
-    border: 1px solid #ffffff;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+th,
+td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: #123567;
+    color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: darkgreen;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0f436d;
+    color: white;
 }
 
 #logo {
@@ -64,7 +93,7 @@ footer {
     width: 120px;
     height: 90px;
     border: 2px dotted #731980;
-    background-color: #004030;
+    background-color: #0f436d;
 }
 
 #logo img {
