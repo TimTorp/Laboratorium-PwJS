@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab6 - Quiz</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      padding-top: 70px;
+    }
+
+    .quiz-container {
+      max-width: 600px;
+      margin: 50px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">QuizLab6</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="../index.html">Strona główna</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="quiz-container">
+    <h1 class="text-center">Quiz - Lab 6</h1>
+    <div id="quiz-content" class="mt-4">
+      <div id="questionText" class="mb-3 h4"></div>
+      <input type="text" id="userAnswer" class="form-control mb-3" placeholder="Twoja odpowiedź">
+      <button class="btn btn-primary w-100" onclick="checkAnswer()">Sprawdź odpowiedź</button>
+    </div>
+    <div id="result" class="text-center mt-4 h5"></div>
+  </div>
+  <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="feedbackModalLabel">Wynik odpowiedzi</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="feedbackMessage">
+          <!-- tutaj wpisujemy dynamicznie wynik -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let score = 0;
+    let q = 0;
+
+    const questions = [
+      ['Stolica Polski?', 'Warszawa'],
+      ['2 + 2?', '4'],
+      ['Kolor nieba?', 'Niebieski'],
+      ['Czym otwieramy zamek?', 'Kluczem'],
+      ['Jak jeszcze nazywamy psy?', 'Kolega Człowieka'],
+    ];
+
+    function displayQuestion() {
+      if (q < questions.length) {
+        document.getElementById('questionText').innerText = questions[q][0];
+        document.getElementById('userAnswer').value = "";
+      } else {
+        showScore();
+      }
+    }
+
+    function checkAnswer() {
+      let answer = document.getElementById('userAnswer').value.trim();
+      if (answer.toLowerCase() === questions[q][1].toLowerCase()) {
+        score++;
+        showFeedback("Dobrze!");
+      } else {
+        showFeedback("Błąd! Prawidłowa odpowiedź: " + questions[q][1]);
+      }
+      q++;
+    }
+
+    function showFeedback(message) {
+      document.getElementById('feedbackMessage').innerText = message;
+      let feedbackModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
+      feedbackModal.show();
+      $('#feedbackModal').off('hidden.bs.modal').on('hidden.bs.modal', function () {
+        displayQuestion();
+      });
+    }
+
+    function showScore() {
+      document.getElementById('quiz-content').style.display = 'none';
+      document.getElementById('result').innerText = `Twój wynik: ${score} z ${questions.length} punktów.`;
+    }
+
+    window.onload = displayQuestion;
+  </script>
+</body>
+
+</html>
