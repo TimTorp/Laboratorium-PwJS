@@ -5,7 +5,8 @@ import InputTracker from './components/InputTracker';
 import LoginStatus from './components/LoginStatus';
 import TodoList from './components/TodoList';
 import LoginForm from './components/LoginForm';
-
+import PrimeCalculator from './components/PrimeCalculator';
+import useReducer from './components/UseReducer';
 function App() {
   const todos = ['Zadanie 1', 'Zadanie 2', 'Zadanie 3'];
 
@@ -20,6 +21,8 @@ function App() {
       <LoginStatus isLoggedIn={true} />
       <TodoList todos={todos} />
       <LoginForm />
+      <PrimeCalculator />
+      <useReducer />
     </div>
   );
 }
