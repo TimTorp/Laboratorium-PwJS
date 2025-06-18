@@ -1,0 +1,139 @@
+body {
+  background-image: url('https://lh4.googleusercontent.com/proxy/IOlMfQq5H005iE0MYs0CIqerOc8CbkbBON9Gq2IjaXFyxLrCTH6sycIzJI9utAW5_fOzemuic_b1fib0iItY1uOWfVbAXxjUvfbDde8Hl3ZiHIYRoi8w3otVntAwJgDn');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-box {
+  margin-bottom: 2rem;
+}
+
+.search-box input,
+.search-box button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.search-box button {
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.search-box button:hover {
+  background-color: #2563eb;
+}
+
+.result-box {
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
+
+.mode-switch {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.mode-switch button {
+  flex: 1;
+  padding: 0.5rem;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f1f5f9;
+  cursor: pointer;
+}
+
+.mode-switch button:hover {
+  background-color: #e0e7ff;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.day-card {
+  background: #f9fafb;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.result-window {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.result-window:hover {
+  transform: scale(1.02);
+}
+
+body {
+  background-color: #f3f4f6;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.search-box {
+  max-width: 600px;
+  margin: 2rem auto 1rem auto;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.search-box input,
+.search-box button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.search-box button {
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.result-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}

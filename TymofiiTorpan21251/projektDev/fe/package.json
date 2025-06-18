@@ -1,0 +1,38 @@
+{
+  "name": "fe",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "days": [
+    {
+      "datetime": "2025-06-16",
+      "temp": 23.1,
+      "humidity": 50,
+      "windspeed": 10.3,
+      "conditions": "Clear",
+      "uvindex": 7,
+      "pressure": 1015.2,
+      "sunrise": "05:10:00",
+      "sunset": "20:45:00",
+      "hours": [
+        {
+          "datetime": "06:00:00",
+          "temp": 18.2,
+          "conditions": "Clear"
+        }
+      ]
+    }
+  ]
+}
